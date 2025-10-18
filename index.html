@@ -56,14 +56,29 @@
           margin-top: 40px !important;
         }
       }
+
+    .menu-enter {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    .menu-enter-active {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .menu-exit-active {
+      transform: translateX(100%);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
     </style>
   </head>
 
   <body class="bg-[#0D0D0D] text-[#E5E5E5]">
     <!-- Header fixo -->
-    <header
-      class="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-sm border-b border-[#1a1a1a]"
-    >
+    <header id="main-header" class="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-sm border-b border-[#1a1a1a] transition-colors duration-300">
+
       <div
         class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4"
       >
@@ -102,8 +117,71 @@
             </svg>
           </a>
         </nav>
+        </nav>
+
+<!-- Botão Burger (visível só no mobile) -->
+<button
+  id="burger"
+  class="md:hidden text-[#FFD451] focus:outline-none focus:ring-2 focus:ring-[#FFD451]/40 p-2 rounded-lg"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    class="w-7 h-7"
+  >
+    <path
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      d="M4 6h16M4 12h16M4 18h16"
+    />
+  </svg>
+</button>
+
       </div>
+      
+
+
     </header>
+  <!-- MENU LATERAL MOBILE (DRAWER) -->
+  <div
+    id="mobile-menu"
+    class="hidden fixed top-0 right-0 z-[9999] h-full w-64
+          bg-[#0D0D0D]/80 backdrop-blur-md border-l border-[#1a1a1a]
+          flex flex-col px-6 py-10 space-y-6 text-lg text-[#E5E5E5]
+          transform translate-x-full transition-transform duration-300 shadow-[0_0_10px_rgba(0,0,0,0.4)]"
+  >
+    <!-- Botão fechar -->
+    <button id="close-menu" class="self-end text-[#FFD451] hover:opacity-80 transition mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+          stroke-width="2" stroke="currentColor" class="w-7 h-7">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Itens do menu -->
+    <a href="#portfolio" class="hover:text-[#FFD451] transition">Portfólio</a>
+    <a href="#sobre" class="hover:text-[#FFD451] transition">Sobre</a>
+    <a href="#contato" class="hover:text-[#FFD451] transition">Contato</a>
+
+    <!-- Instagram -->
+    <a
+      href="https://www.instagram.com/arthurlima.araujo"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-[#FFD451] hover:opacity-80 transition inline-flex items-center space-x-2"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
+        <path
+          d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5Zm4.25 4A4.75 4.75 0 1 1 7.25 12a4.75 4.75 0 0 1 4.75-4.5Zm0 1.5A3.25 3.25 0 1 0 15.25 12a3.25 3.25 0 0 0-3.25-3.25ZM17.75 6a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"
+        />
+      </svg>
+      <span>@arthurlima.araujo</span>
+    </a>
+  </div>
+
 
     <!-- HERO -->
     <section
@@ -378,6 +456,32 @@
             }
           });
         });
+      // ===== DRAWER MOBILE =====
+      const burger = document.getElementById("burger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const closeMenu = document.getElementById("close-menu");
+
+      function openMenu() {
+        mobileMenu.classList.remove("hidden");
+        requestAnimationFrame(() => {
+          mobileMenu.classList.remove("translate-x-full");
+        });
+      }
+
+      function closeMenuFunc() {
+        mobileMenu.classList.add("translate-x-full");
+        setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+      }
+
+      burger.addEventListener("click", openMenu);
+      closeMenu.addEventListener("click", closeMenuFunc);
+
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", closeMenuFunc);
+      });
+
+
+
     </script>
   </body>
 </html>

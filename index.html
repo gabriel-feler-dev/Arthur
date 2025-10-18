@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio | Arthur</title>
+
+  <!-- Fonte + Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Biblioteca AOS (animações ao rolar) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    #videoModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0D0D0D] text-[#E5E5E5]">
+  <!-- Header fixo -->
+<header class="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-sm border-b border-[#1a1a1a]">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+    
+    <!-- Nome -->
+    <a href="#hero" class="text-[#FFD451] text-2xl font-extrabold tracking-widest hover:opacity-80 transition">
+      ARTHUR
+    </a>
+
+    <!-- Menu -->
+    <nav class="space-x-8 hidden md:flex items-center">
+      <a href="#portfolio" class="hover:text-[#FFD451] transition">Portfólio</a>
+      <a href="#sobre" class="hover:text-[#FFD451] transition">Sobre</a>
+      <a href="#contato" class="hover:text-[#FFD451] transition">Contato</a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/arthurlima.araujo" target="_blank" rel="noopener noreferrer"
+         class="text-[#FFD451] hover:opacity-80 transition inline-flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" 
+             class="w-6 h-6">
+          <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5Zm4.25 4A4.75 4.75 0 1 1 7.25 12a4.75 4.75 0 0 1 4.75-4.5Zm0 1.5A3.25 3.25 0 1 0 15.25 12a3.25 3.25 0 0 0-3.25-3.25ZM17.75 6a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"/>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- HERO -->
+  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center relative bg-cover bg-center bg-[#0D0D0D] bg-fixed"
+    style="background-image:url('./assets/images/background_hero.png')">
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative z-10 px-6">
+      <h2 class="text-4xl md:text-6xl font-extrabold text-[#FFD451] mb-4 drop-shadow-lg">
+        Criação que <span id="changing-text" class="text-white"></span>
+      </h2>
+
+      <p class="text-gray-300 max-w-lg mx-auto mb-8 leading-relaxed">
+        Direção, produção e edição de vídeos com propósito e emoção.
+      </p>
+
+      <a href="#portfolio"
+        class="bg-[#FFD451] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#ffdb6e] transition duration-300 shadow-md hover:shadow-[#FFD451]/50">
+        Ver Portfólio
+      </a>
+    </div>
+  </section>
+
+  <!-- Frases -->
+  <script>
+    const phrases = [
+      "captura momentos.",
+      "completa desafios.",
+      "transforma ideias em arte.",
+      "traduz emoções em imagem.",
+      "dá vida ao invisível."
+    ];
+
+    let i = 0;
+    const el = document.getElementById("changing-text");
+
+    function typePhrase() {
+      const phrase = phrases[i];
+      let j = 0;
+      el.textContent = "";
+      const typing = setInterval(() => {
+        el.textContent += phrase[j];
+        j++;
+        if (j >= phrase.length) {
+          clearInterval(typing);
+          setTimeout(erasePhrase, 2000);
+        }
+      }, 80);
+    }
+
+    function erasePhrase() {
+      const phrase = el.textContent;
+      let j = phrase.length;
+      const erasing = setInterval(() => {
+        el.textContent = phrase.substring(0, j - 1);
+        j--;
+        if (j === 0) {
+          clearInterval(erasing);
+          i = (i + 1) % phrases.length;
+          setTimeout(typePhrase, 300);
+        }
+      }, 40);
+    }
+
+    document.addEventListener("DOMContentLoaded", typePhrase);
+  </script>
+
+<!-- Portfólio -->
+<section id="portfolio" class="max-w-6xl mx-auto px-6 py-24">
+  <h3 class="text-3xl font-semibold text-center mb-12 text-[#FFD451]" data-aos="fade-up">
+    Portfólio
+  </h3>
+
+  <!-- grid vídeos -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <!-- Card 1 -->
+    <div
+      class="bg-[#1a1a1a] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition"
+      onclick="openModal('assets/videos/nokia.mp4')" data-aos="fade-up">
+      <video 
+        src="assets/videos/nokia.mp4"
+        poster="assets/images/job.jpg"
+        class="w-full h-64 object-cover opacity-70 hover:opacity-100 transition"
+      ></video>
+      <div class="p-4">
+        <p class="text-lg font-medium">Exemplo de Trampo Aqui (clicável)</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div
+      class="bg-[#1a1a1a] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition"
+      onclick="openModal('assets/videos/nokia.mp4')" data-aos="fade-up">
+      <video 
+        src="assets/videos/nokia.mp4"
+        poster="assets/images/car1.jpeg"
+        class="w-full h-64 object-cover opacity-70 hover:opacity-100 transition"
+      ></video>
+      <div class="p-4">
+        <p class="text-lg font-medium">Outro Exemplo de Trampo Aqui (clicável)</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Modal -->
+  <div id="videoModal" onclick="closeModal()">
+    <video id="modalVideo" controls class="w-11/12 max-w-4xl rounded-lg border border-[#FFD451]"></video>
+  </div>
+
+  <!-- Sobre -->
+  <section id="sobre" class="bg-[#111111] py-24">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 px-6" data-aos="fade-right">
+      <img src="assets/images/mc.jpg" class="w-64 h-64 object-cover rounded-lg shadow-lg border border-[#FFD451]" alt="">
+      <div>
+        <h3 class="text-3xl font-semibold text-[#FFD451] mb-4">Sobre Mim</h3>
+        <p class="text-gray-300 leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.   
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="py-24 px-6 text-center" data-aos="fade-up">
+    <h3 class="text-3xl font-semibold text-[#FFD451] mb-6">Fale Comigo</h3>
+    <p class="text-gray-400 mb-10">Tem um projeto em mente? Vamos conversar!</p>
+    <form class="max-w-md mx-auto space-y-4">
+      <input type="text" placeholder="Seu nome" class="w-full p-3 rounded bg-[#1a1a1a] text-white border border-gray-700 focus:outline-none focus:border-[#FFD451]" />
+      <input type="email" placeholder="Seu e-mail" class="w-full p-3 rounded bg-[#1a1a1a] text-white border border-gray-700 focus:outline-none focus:border-[#FFD451]" />
+      <textarea placeholder="Mensagem" rows="4" class="w-full p-3 rounded bg-[#1a1a1a] text-white border border-gray-700 focus:outline-none focus:border-[#FFD451]"></textarea>
+      <button type="submit" class="bg-[#FFD451] text-black px-8 py-3 rounded-full font-semibold hover:bg-[#ffdb6e] transition">Enviar</button>
+    </form>
+  </section>
+
+ <!-- Footer -->
+<footer class="border-t border-[#1a1a1a] py-6 text-center text-gray-500 text-sm">
+  <div class="flex flex-col items-center space-y-3">
+    <p>Arthur Videomaker — Todos os direitos reservados</p>
+
+    <!-- Ícone do Instagram -->
+    <a href="https://www.instagram.com/arthurlima.araujo" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="text-[#FFD451] hover:opacity-80 transition inline-flex items-center space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" 
+           class="w-6 h-6">
+        <path d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5Zm4.25 4A4.75 4.75 0 1 1 7.25 12a4.75 4.75 0 0 1 4.75-4.5Zm0 1.5A3.25 3.25 0 1 0 15.25 12a3.25 3.25 0 0 0-3.25-3.25ZM17.75 6a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"/>
+      </svg>
+      <span>@arthurlima.araujo</span>
+    </a>
+  </div>
+</footer>
+
+
+  <!-- Scripts -->
+  <script>
+    AOS.init({ duration: 800, once: true });
+
+    // --- Modal de vídeo ---
+    function openModal(src) {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      video.src = src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      modal.style.display = 'none';
+      video.pause();
+    }
+
+    // --- Scroll nos botões ---
+    function easeInOutQuad(t) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    function smoothScrollTo(targetY, duration = 1000) {
+      const startY = window.scrollY;
+      const distance = targetY - startY;
+      let startTime = null;
+
+      function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const eased = easeInOutQuad(progress);
+
+        window.scrollTo(0, startY + distance * eased);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          const headerOffset = 70; // compensar o header fixo
+          const elementPosition = targetEl.offsetTop;
+          const offsetPosition = elementPosition - headerOffset;
+          smoothScrollTo(offsetPosition, 900); // duração da animação
+        }
+      });
+    });
+  </script>
+</body>
+</html>

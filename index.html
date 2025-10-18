@@ -79,19 +79,24 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="hero" class="h-screen flex flex-col justify-center items-center text-center relative bg-cover bg-center bg-[#0D0D0D] bg-fixed"
-    style="background-image:url('./assets/images/background_hero.png')">
-    <div class="absolute inset-0 bg-black/60"></div>
+<section id="hero" 
+  class="min-h-screen flex flex-col justify-center items-center text-center relative bg-cover bg-center bg-[#0D0D0D] bg-fixed"
+  style="background-image:url('./assets/images/background_hero.png')">
+  
+  <div class="absolute inset-0 bg-black/60"></div>
 
-    <div class="relative z-10 px-6">
-<h2 class="text-4xl md:text-6xl font-extrabold text-center drop-shadow-lg leading-tight text-[#FFD451]">
-  Criação que <span id="changing-text" class="text-white"></span>
-</h2>
+  <div class="relative z-10 flex flex-col items-center">
+    
+    <!-- Título -->
+    <div class="flex flex-wrap justify-center items-baseline gap-x-2 min-h-[140px]">
+      <h2 class="text-4xl md:text-6xl font-extrabold drop-shadow-lg leading-tight text-[#FFD451]">
+        Criação que <span id="changing-text" class="text-white"></span>
+      </h2>
+    </div>
 
-
-
-      <p class="text-gray-300 max-w-lg mx-auto mb-8 leading-relaxed">
+    <!-- Sub Título e Botão -->
+    <div class="mt-2 text-center px-6"> 
+      <p class="text-gray-300 max-w-lg mx-auto mb-8 leading-relaxed px-4"> 
         Direção, produção e edição de vídeos com propósito e emoção.
       </p>
 
@@ -100,7 +105,10 @@
         Ver Portfólio
       </a>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
   <!-- Frases -->
   <script>
@@ -109,7 +117,7 @@
       "transforma ideias em arte.",
       "traduz emoções em imagem.",
       "dá vida ao invisível.",
-            "completa desafios.",
+      "completa desafios.",
     ];
     let i = 0;
     const el = document.getElementById("changing-text");

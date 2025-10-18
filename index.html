@@ -31,12 +31,12 @@
   line-height: 1.2;
   text-align: center;
   display: inline-block;
-  white-space: nowrap;          /* ❗mantém tudo na mesma linha no desktop */
+  white-space: nowrap;       
 }
 
 @media (max-width: 768px) {
   #hero h2 {
-    white-space: normal;        /* ❗permite quebrar apenas no mobile */
+    white-space: normal;       
     word-break: break-word;
   }
 
@@ -106,10 +106,10 @@
   <script>
     const phrases = [
       "captura momentos.",
-      "completa desafios.",
       "transforma ideias em arte.",
       "traduz emoções em imagem.",
-      "dá vida ao invisível."
+      "dá vida ao invisível.",
+            "completa desafios.",
     ];
     let i = 0;
     const el = document.getElementById("changing-text");

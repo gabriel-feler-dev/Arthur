@@ -10,14 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap"
       rel="stylesheet"
     />
-    
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Biblioteca AOS (animações ao rolar) -->
-    <link
-      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <style>
@@ -58,28 +54,29 @@
         }
       }
 
-    .menu-enter {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    .menu-enter-active {
-      transform: translateX(0);
-      opacity: 1;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-    .menu-exit-active {
-      transform: translateX(100%);
-      opacity: 0;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
+      .menu-enter {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      .menu-enter-active {
+        transform: translateX(0);
+        opacity: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      .menu-exit-active {
+        transform: translateX(100%);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
     </style>
   </head>
 
   <body class="bg-[#0D0D0D] text-[#E5E5E5]">
     <!-- Header fixo -->
-    <header id="main-header" class="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-sm border-b border-[#1a1a1a] transition-colors duration-300">
-
+    <header
+      id="main-header"
+      class="fixed top-0 w-full z-50 bg-[#0D0D0D]/80 backdrop-blur-sm border-b border-[#1a1a1a] transition-colors duration-300"
+    >
       <div
         class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4"
       >
@@ -118,77 +115,86 @@
             </svg>
           </a>
         </nav>
-        </nav>
 
-<!-- Botão Burger (visível só no mobile) -->
-<button
-  id="burger"
-  class="md:hidden text-[#FFD451] focus:outline-none focus:ring-2 focus:ring-[#FFD451]/40 p-2 rounded-lg"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="2"
-    stroke="currentColor"
-    class="w-7 h-7"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      d="M4 6h16M4 12h16M4 18h16"
-    />
-  </svg>
-</button>
-
+        <!-- Botão Burger (visível só no mobile) -->
+        <button
+          id="burger"
+          class="md:hidden text-[#FFD451] focus:outline-none focus:ring-2 focus:ring-[#FFD451]/40 p-2 rounded-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-7 h-7"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
       </div>
-      
-
-
     </header>
-  <!-- MENU LATERAL MOBILE (DRAWER) -->
-  <div
-    id="mobile-menu"
-    class="hidden fixed top-0 right-0 z-[9999] h-full w-64
-          bg-[#0D0D0D]/80 backdrop-blur-md border-l border-[#1a1a1a]
-          flex flex-col px-6 py-10 space-y-6 text-lg text-[#E5E5E5]
-          transform translate-x-full transition-transform duration-300 shadow-[0_0_10px_rgba(0,0,0,0.4)]"
-  >
-    <!-- Botão fechar -->
-    <button id="close-menu" class="self-end text-[#FFD451] hover:opacity-80 transition mb-4">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-          stroke-width="2" stroke="currentColor" class="w-7 h-7">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-
-    <!-- Itens do menu -->
-    <a href="#portfolio" class="hover:text-[#FFD451] transition">Portfólio</a>
-    <a href="#sobre" class="hover:text-[#FFD451] transition">Sobre</a>
-    <a href="#contato" class="hover:text-[#FFD451] transition">Contato</a>
-
-    <!-- Instagram -->
-    <a
-      href="https://www.instagram.com/arthurlima.araujo"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-[#FFD451] hover:opacity-80 transition inline-flex items-center space-x-2"
+    <!-- MENU LATERAL MOBILE (DRAWER) -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed top-0 right-0 z-[9999] h-full w-64 bg-[#0D0D0D]/80 backdrop-blur-md border-l border-[#1a1a1a] flex flex-col px-6 py-10 space-y-6 text-lg text-[#E5E5E5] transform translate-x-full transition-transform duration-300 shadow-[0_0_10px_rgba(0,0,0,0.4)]"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6">
-        <path
-          d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5Zm4.25 4A4.75 4.75 0 1 1 7.25 12a4.75 4.75 0 0 1 4.75-4.5Zm0 1.5A3.25 3.25 0 1 0 15.25 12a3.25 3.25 0 0 0-3.25-3.25ZM17.75 6a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"
-        />
-      </svg>
-      <span>@arthurlima.araujo</span>
-    </a>
-  </div>
+      <!-- Botão fechar -->
+      <button
+        id="close-menu"
+        class="self-end text-[#FFD451] hover:opacity-80 transition mb-4"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="w-7 h-7"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
 
+      <!-- Itens do menu -->
+      <a href="#portfolio" class="hover:text-[#FFD451] transition">Portfólio</a>
+      <a href="#sobre" class="hover:text-[#FFD451] transition">Sobre</a>
+      <a href="#contato" class="hover:text-[#FFD451] transition">Contato</a>
+
+      <!-- Instagram -->
+      <a
+        href="https://www.instagram.com/arthurlima.araujo"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-[#FFD451] hover:opacity-80 transition inline-flex items-center space-x-2"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+          class="w-6 h-6"
+        >
+          <path
+            d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5Zm4.25 4A4.75 4.75 0 1 1 7.25 12a4.75 4.75 0 0 1 4.75-4.5Zm0 1.5A3.25 3.25 0 1 0 15.25 12a3.25 3.25 0 0 0-3.25-3.25ZM17.75 6a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"
+          />
+        </svg>
+        <span>@arthurlima.araujo</span>
+      </a>
+    </div>
 
     <!-- HERO -->
     <section
       id="hero"
       class="min-h-screen flex flex-col justify-center items-center text-center relative bg-cover bg-center bg-[#0D0D0D] bg-fixed"
-      style="background-image:url('./assets/images/background_hero.png')"
+      style="background-image: url('./assets/images/background_hero.png')"
     >
       <div class="absolute inset-0 bg-black/60"></div>
 
@@ -206,45 +212,46 @@
 
         <!-- Subtítulo e Botão -->
         <div class="mt-0 text-center px-6">
-          <p class="text-gray-300 max-w-lg mx-auto mb-2 md:mb-6 leading-relaxed px-4">
+          <p
+            class="text-gray-300 max-w-lg mx-auto mb-2 md:mb-6 leading-relaxed px-4"
+          >
             Direção, produção e edição de vídeos com propósito e emoção.
           </p>
 
           <!-- Botões -->
-    <div class="flex justify-center items-end gap-4 mt-2 md:mt-4">
+          <div class="flex justify-center items-end gap-4 mt-2 md:mt-4">
+            <!-- Bloco do botão Portfólio -->
+            <div class="flex justify-center">
+              <a
+                href="#portfolio"
+                class="flex items-center justify-center h-12 px-8 rounded-full font-semibold text-base bg-[#FFD451] text-black border-2 border-transparent transition duration-300 shadow-md hover:bg-[#ffdb6e] hover:shadow-[#FFD451]/50"
+              >
+                Ver Portfólio
+              </a>
+            </div>
 
-  <!-- Bloco do botão Portfólio -->
-  <div class="flex justify-center">
-    <a
-      href="#portfolio"
-      class="flex items-center justify-center h-12 px-8 rounded-full font-semibold text-base
-             bg-[#FFD451] text-black border-2 border-transparent
-             transition duration-300 shadow-md hover:bg-[#ffdb6e] hover:shadow-[#FFD451]/50"
-    >
-      Portfóliooo
-    </a>
-  </div>
-
-  <!-- Bloco do botão Instagram -->
-  <div class="flex justify-center">
-    <a
-      href="https://www.instagram.com/arthurlima.araujo"
-      target="_blank" rel="noopener noreferrer"
-      class="flex items-center justify-center h-12 px-8 rounded-full font-semibold text-base
-             border-2 border-[#FFD451] text-[#FFD451]
-             transition duration-300 shadow-md hover:bg-[#FFD451] hover:text-black hover:shadow-[#FFD451]/50"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-           class="w-5 h-5 mr-2 align-middle" fill="currentColor">
-        <path
-          d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5Zm4.25 4A4.75 4.75 0 1 1 7.25 12a4.75 4.75 0 0 1 4.75-4.5Zm0 1.5A3.25 3.25 0 1 0 15.25 12a3.25 3.25 0 0 0-3.25-3.25ZM17.75 6a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"
-        />
-      </svg>
-      Instagram
-    </a>
-  </div>
-</div>
-
+            <!-- Bloco do botão Instagram -->
+            <div class="flex justify-center">
+              <a
+                href="https://www.instagram.com/arthurlima.araujo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center h-12 px-8 rounded-full font-semibold text-base border-2 border-[#FFD451] text-[#FFD451] transition duration-300 shadow-md hover:bg-[#FFD451] hover:text-black hover:shadow-[#FFD451]/50"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  class="w-5 h-5 mr-2 align-middle"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M7.75 2h8.5A5.76 5.76 0 0 1 22 7.75v8.5A5.76 5.76 0 0 1 16.25 22h-8.5A5.76 5.76 0 0 1 2 16.25v-8.5A5.76 5.76 0 0 1 7.75 2Zm0 1.5A4.26 4.26 0 0 0 3.5 7.75v8.5A4.26 4.26 0 0 0 7.75 20.5h8.5A4.26 4.26 0 0 0 20.5 16.25v-8.5A4.26 4.26 0 0 0 16.25 3.5Zm4.25 4A4.75 4.75 0 1 1 7.25 12a4.75 4.75 0 0 1 4.75-4.5Zm0 1.5A3.25 3.25 0 1 0 15.25 12a3.25 3.25 0 0 0-3.25-3.25ZM17.75 6a.75.75 0 1 1-.75.75.75.75 0 0 1 .75-.75Z"
+                  />
+                </svg>
+                Instagram
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -302,49 +309,44 @@
       </h3>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card YouTube -->
         <div
           class="bg-[#1a1a1a] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition"
-          onclick="openModal('assets/videos/nokia.mp4')"
+          onclick="openModal('2KAmsE9Q--o')"
           data-aos="fade-up"
         >
-          <video
-            src="assets/videos/nokia.mp4"
-            poster="assets/images/job.jpg"
+          <img
+            src="https://img.youtube.com/vi/2KAmsE9Q--o/hqdefault.jpg"
             class="w-full h-64 object-cover opacity-70 hover:opacity-100 transition"
-          ></video>
-          <div class="p-4">
-            <p class="text-lg font-medium">
-              Exemplo de Trampo Aqui (clicável)
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="bg-[#1a1a1a] rounded-lg overflow-hidden cursor-pointer hover:scale-105 transition"
-          onclick="openModal('assets/videos/nokia.mp4')"
-          data-aos="fade-up"
-        >
-          <video
-            src="assets/videos/nokia.mp4"
-            poster="assets/images/car1.jpeg"
-            class="w-full h-64 object-cover opacity-70 hover:opacity-100 transition"
-          ></video>
+            alt="Vídeo do portfólio"
+          />
           <div class="p-4">
             <p class="text-lg font-medium">
               Outro Exemplo de Trampo Aqui (clicável)
             </p>
           </div>
         </div>
+
+        <!-- para add mais card só  -->
       </div>
     </section>
 
-    <!-- Modal -->
+    <!-- Modal (YouTube) -->
     <div id="videoModal" onclick="closeModal()">
-      <video
-        id="modalVideo"
-        controls
-        class="w-11/12 max-w-4xl rounded-lg border border-[#FFD451]"
-      ></video>
+      <div
+        class="w-11/12 max-w-4xl aspect-video"
+        onclick="event.stopPropagation()"
+      >
+        <iframe
+          id="modalVideo"
+          class="w-full h-full rounded-lg border border-[#FFD451]"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
     </div>
 
     <!-- Sobre -->
@@ -359,9 +361,7 @@
           alt=""
         />
         <div>
-          <h3 class="text-3xl font-semibold text-[#FFD451] mb-4">
-            Sobre Mim
-          </h3>
+          <h3 class="text-3xl font-semibold text-[#FFD451] mb-4">Sobre Mim</h3>
           <p class="text-gray-300 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -435,18 +435,20 @@
     <script>
       AOS.init({ duration: 800, once: true });
 
-      function openModal(src) {
+      function openModal(youtubeId) {
         const modal = document.getElementById("videoModal");
-        const video = document.getElementById("modalVideo");
-        video.src = src;
+        const iframe = document.getElementById("modalVideo");
+
+        iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1`;
         modal.style.display = "flex";
       }
 
       function closeModal() {
         const modal = document.getElementById("videoModal");
-        const video = document.getElementById("modalVideo");
+        const iframe = document.getElementById("modalVideo");
+
+        iframe.src = ""; // para o vídeo
         modal.style.display = "none";
-        video.pause();
       }
 
       function easeInOutQuad(t) {
@@ -470,20 +472,16 @@
         requestAnimationFrame(animation);
       }
 
-      document
-        .querySelectorAll('a[href^="#"]')
-        .forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetEl = document.querySelector(
-              this.getAttribute("href")
-            );
-            if (targetEl) {
-              const offsetPosition = targetEl.offsetTop - 70;
-              smoothScrollTo(offsetPosition, 900);
-            }
-          });
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetEl = document.querySelector(this.getAttribute("href"));
+          if (targetEl) {
+            const offsetPosition = targetEl.offsetTop - 70;
+            smoothScrollTo(offsetPosition, 900);
+          }
         });
+      });
       // ===== DRAWER MOBILE =====
       const burger = document.getElementById("burger");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -507,17 +505,6 @@
       document.querySelectorAll("#mobile-menu a").forEach((link) => {
         link.addEventListener("click", closeMenuFunc);
       });
-
-
-
     </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
